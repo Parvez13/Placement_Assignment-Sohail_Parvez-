@@ -4,7 +4,7 @@ def twoSum(nums, target):
    hashmap = {}
    for index, current_element in enumerate(nums):
 	   if target - current_element in hashmap.keys():
-		   return [hashmap[current_element], index]
+		   return [hashmap[target-current_element], index]
 	   else:
 		   hashmap[current_element] = index
 		
