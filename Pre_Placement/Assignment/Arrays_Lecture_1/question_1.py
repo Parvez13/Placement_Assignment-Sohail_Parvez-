@@ -1,13 +1,12 @@
 # Return indices
 
 def twoSum(nums, target):
-    
-    d = {}
-    for i, j in enumerate(nums):
-        r = target - j
-        if r in d: 
-            return [d[r], i]
-        d[j] = i
+   hashmap = {}
+   for index, current_element in enumerate(nums):
+	   if target - current_element in hashmap.keys():
+		   return [hashmap[current_element], index]
+	   else:
+		   hashmap[current_element] = index
 		
 
 if __name__ == '__main__':
