@@ -1,10 +1,9 @@
 def ending_zeros(nums):
     n = len(nums)
-    j = 0
-    for i in range(n):
-        if nums[i] != 0:
-            nums[j], nums[i] = nums[i], nums[j]
-            j += 1
+    for i in range(0,n):
+        if nums[i] == 0:
+            nums.remove(nums[i])
+            nums.append(0)
     return nums
         
 
