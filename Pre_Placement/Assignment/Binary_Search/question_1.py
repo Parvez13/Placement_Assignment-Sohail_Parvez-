@@ -1,6 +1,4 @@
 def squareRoot(n):
-    if n < 2:
-        return n
     low, high = 1, n
     while low <= high:
         mid = (low + high) // 2
