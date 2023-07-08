@@ -1,15 +1,18 @@
-def squareSorted(nums):
-	result = []
-	left_pointer = 0
-	right_pointer = len(nums)-1
-	while left_pointer <= right_pointer:
-		if nums[left_pointer] * nums[left_pointer] > nums[right_pointer] * nums[right_pointer]:
-			result.append(nums[left_pointer] * nums[left_pointer])
-			left_pointer += 1
-		else:
-			result.append(nums[right_pointer] * nums[right_pointer])
-			right_pointer -= 1
-	return result[::-1]
+def maxHarmonicSeries(arr):
+    freq = {}
+    max_length = 0
+    #Count each number frequence
+    for i in range(len(arr)):
+        freq[i] = freq.get(i, 0)+1
+    # Check for harmonious subsequences
+    for num in freq:
+        if num + 1 in freq:
+            print(num+1)
+            length = freq[num] + freq[num + 1]
+            max_length = max(max_length, length)
 
-nums = [-4, -1, 0, 3, 10]
-print(squareSorted(nums))
+    return max_length
+# TC: O(N+N)-> O(2N)-> O(N)
+# SC: O(N)
+arr =  [1,3,2,2,5,2,3,7]
+print(maxHarmonicSeries(arr))
